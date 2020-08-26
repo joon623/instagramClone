@@ -522,8 +522,23 @@ li.recommend > div:nth-child(3) {
     font-size: 11.11px;
     color: #8E8E8E;
 }
+.feed__comment {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+
+}
 
 
+.comment__heart {
+    position: absolute;
+    right: 15px;
+}
+
+.heart__effect {
+    background-color: red;
+}
 @media (max-width: 1000px){
     .main__right{
         display: none;

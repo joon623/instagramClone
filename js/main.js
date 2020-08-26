@@ -39,7 +39,12 @@ function addComment() {
     reply.classList.add('feed__comment');
     let replySpan = document.createElement('span');
 
-    replySpan.innerHTML = `<Span style="font-size: 16px; font-weight: 600;">${myId}</span> ${comment_letter}`;
+    replySpan.innerHTML = `<div class="comment__block">
+                                <span style="font-size: 16px; font-weight: 600;">${myId}</span> 
+                                <span>${comment_letter} </span>
+                                <img src="../img/main/heart.png" style="width:12px; height: 10px; " class="comment__heart">
+                            </div>
+                             `;
     reply.appendChild(replySpan);
     if (!(comment_letter.length === 0)) {
         feedComments.appendChild(reply);
@@ -48,7 +53,25 @@ function addComment() {
     comment.value = "";
     comment.focus();
 }
+//  댓글 하트 추가하기 
+let heart = document.querySelectorAll('.comment__heart');
+const heartList = heart.forEach(e => {
+    e.addEventListener('click', element => {
+        console.log(e);
+    });
+});
+function updateHeartList() {
 
+}
+comment.addEventListener('keyup', e => {
+    let heart = document.querySelectorAll('.comment__heart');
+    console.log(heart);
+    for (let i = 0; i < heart.length; i++) {
+        heart[i].addEventListener('click', e => {
+            heart[i].classList.add('heart__effect');
+        })
+    }
+})
 
 // 아이디 로고 박스
 const clickBox = document.querySelector('.ClickBox'),
