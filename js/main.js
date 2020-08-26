@@ -55,23 +55,21 @@ function addComment() {
 }
 //  댓글 하트 추가하기 
 let heart = document.querySelectorAll('.comment__heart');
-const heartList = heart.forEach(e => {
-    e.addEventListener('click', element => {
-        console.log(e);
-    });
-});
-function updateHeartList() {
+comment.addEventListener('keyup', addHeart);
 
-}
-comment.addEventListener('keyup', e => {
+function addHeart() {
     let heart = document.querySelectorAll('.comment__heart');
-    console.log(heart);
     for (let i = 0; i < heart.length; i++) {
-        heart[i].addEventListener('click', e => {
-            heart[i].classList.add('heart__effect');
+        heart[i].addEventListener('click', () => {
+            heart = document.querySelectorAll('.comment__heart');
+            if (heart[i].classList[1] === "heart__effect") {
+                heart[i].classList.remove('heart__effect');
+            } else if (!(heart[i].classList[1] === "heart__effect")) {
+                heart[i].classList.add('heart__effect');
+            }
         })
     }
-})
+}
 
 // 아이디 로고 박스
 const clickBox = document.querySelector('.ClickBox'),

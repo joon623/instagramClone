@@ -537,7 +537,10 @@ li.recommend > div:nth-child(3) {
 }
 
 .heart__effect {
-    background-color: red;
+    background-image: url(../img/images.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 88;
 }
 @media (max-width: 1000px){
     .main__right{
